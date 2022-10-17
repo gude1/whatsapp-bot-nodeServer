@@ -8,6 +8,7 @@ router.get("/qr", (req, res) => {
   res.render("qr", {
     qr: global.whatsappclient_qr,
     clientready: global.clientready ? "yes" : "no",
+    clientauthenticated: global.clientauthenticated ? "yes" : "no",
   });
 });
 router.route("/logout").get(logOut).post(logOut);
