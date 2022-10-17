@@ -1,0 +1,203 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+    "title" : "Whatsapp Bot Server API",
+    "version": "1.0.0",
+    "description": "Connect your whatsapp and send automated messages via this api",
+    "contact": {
+        "name": "Click here to connect your Whatsapp",
+        "url": "http://localhost:4000/api/v1/qr"
+    }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:4000/api/v1",
+            "description": "Local Server"
+        }
+    ],
+    "paths": {
+        "/": {
+            "post": {
+                "description": "Send a Whatsapp message",
+                "requestBody": {
+                    "description": "request data",
+                    "required": true,
+                    "content": {
+                        "application/json" : {
+                            "schema":{
+                                "type":"object",
+                                "properties": {
+                                    "number":{
+                                        "type": "string"
+                                    },
+                                    "message":{
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                    "success":{
+                                        "type": "boolean"
+                                    },
+                                    "error":{
+                                        "type":"string"
+                                    }
+                                  }
+                                 
+                                }
+                              }
+                        }
+
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                    "success":{
+                                        "type": "boolean",
+                                        "example":"false"
+                                    },
+                                    "message":{
+                                        "type":"string"
+                                    }
+                                  }
+                                 
+                                }
+                              }
+                        }
+
+                    },
+                    "500": {
+                        "description": "Internal Sever Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                    "success":{
+                                        "type": "boolean",
+                                        "example":"false"
+                                    },
+                                    "error":{
+                                        "type":"string"
+                                    }
+                                  }
+                                 
+                                }
+                              }
+                        }
+
+                    }
+                }
+            }
+        },
+        "/logout": {
+            "get": {
+                "description": "Logout Whatsapp Client",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                    "success":{
+                                        "type": "boolean"
+                                    },
+                                    "error":{
+                                        "type":"string"
+                                    }
+                                  }
+                                 
+                                }
+                              }
+                        }
+
+                    },
+                    "500": {
+                        "description": "Internal Sever Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                    "success":{
+                                        "type": "boolean",
+                                        "example":"false"
+                                    },
+                                    "error":{
+                                        "type":"string"
+                                    }
+                                  }
+                                 
+                                }
+                              }
+                        }
+
+                    }
+                }
+            },
+            "post": {
+                "description": "Logout Whatsapp Client",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                    "success":{
+                                        "type": "boolean"
+                                    },
+                                    "error":{
+                                        "type":"string"
+                                    }
+                                  }
+                                 
+                                }
+                              }
+                        }
+
+                    },
+                    "500": {
+                        "description": "Internal Sever Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                    "success":{
+                                        "type": "boolean",
+                                        "example":"false"
+                                    },
+                                    "error":{
+                                        "type":"string"
+                                    }
+                                  }
+                                 
+                                }
+                              }
+                        }
+
+                    }
+                }
+            }
+        }
+        
+    }
+}

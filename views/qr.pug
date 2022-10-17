@@ -1,0 +1,11 @@
+doctype
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        title
+    body
+    span(style="display:none;", id="qrcode")=qr
+    span(style="display:none;", id="clientready")=clientready
+    h3 Scan Qr bar-code to connect your Whatsapp, refresh and rescan if error occurs
+    div(id="qr-div")
+    script(src="/js/qr.js" type="module")
